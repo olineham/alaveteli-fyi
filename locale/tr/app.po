@@ -467,6 +467,9 @@ msgstr "Aramak istediğiniz kurumun baş harfini tıklayınız"
 msgid "Browse <a href=\"{{requests_url}}\">{{number_of_requests}} requests</a> to <a href=\"{{authorities_url}}\">{{number_of_authorities}} authorities</a>"
 msgstr " <a href=\"{{requests_url}}\">{{number_of_requests}} Başvuruyu </a> ve <a href=\"{{authorities_url}}\">{{number_of_authorities}} kurumu</a> görün"
 
+msgid "Browse <a href=\"{{requests_url}}\">{{number_of_requests}} requests</a> to <a href=\"{{authorities_url}}\">{{number_of_authorities}} authorities</a>"
+msgstr ""
+
 msgid "Browse <a href='{{url}}'>other requests</a> for examples of how to word your request."
 msgstr "Bilgi edinme isteğinizi nasıl ifade edebileceğiniz gibi konularda örnekleri görmek için <a href='{{url}}'>diğer başvurular</a>ı gezin.  "
 
@@ -1024,6 +1027,9 @@ msgstr "Gönderen:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "ŞİKAYETİNİZLE İLGİLİ DETAYLARI BURADA PAYLAŞIN"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Hesabınız var mı?"
 
@@ -1496,6 +1502,9 @@ msgstr "Bilgi edinme başvurusu yapın"
 
 msgid "Make a request &raquo;"
 msgstr "Bilgi edinme başvurusu yap &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Bu kurumlara bilgi edinme başvurusu yapın"
@@ -2497,6 +2506,9 @@ msgstr "Kendi blogunuzu başlayın"
 msgid "Start your own request"
 msgstr "Bilgi edinme başvurunuzu yapmaya başlayın"
 
+msgid "Start your own request"
+msgstr ""
+
 msgid "Stay up to date"
 msgstr "Gelişmelerden haberdar olun"
 
@@ -3347,6 +3359,9 @@ msgstr "Kamu kuruluşunun cevap vermesi bekleniyor"
 
 msgid "Want to know something?"
 msgstr "Bilmek istediğiniz bir şey mi var?"
+
+msgid "Want to know something?"
+msgstr ""
 
 msgid "Was the response you got to your FOI request any good?"
 msgstr "Bilgi edinme başvurunuza aldığınız cevap olumlu muydu?"

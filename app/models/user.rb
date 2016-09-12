@@ -219,6 +219,7 @@ class User < ActiveRecord::Base
     if banned?
       name = _("{{user_name}} (Account suspended)", :user_name => name)
     end
+
     name
   end
 

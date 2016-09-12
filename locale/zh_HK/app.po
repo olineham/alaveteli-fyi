@@ -1019,6 +1019,9 @@ msgstr "由："
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "請在此詳述你的投訴"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "是否已持有帳戶？"
 
@@ -1488,6 +1491,9 @@ msgid "Make a request"
 msgstr "提出要求"
 
 msgid "Make a request &raquo;"
+msgstr ""
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
 msgstr ""
 
 msgid "Make a request to these authorities"

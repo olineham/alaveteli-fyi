@@ -1022,6 +1022,9 @@ msgstr "Da:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "FORNISCI DETTAGLI SUL TUO RECLAMO QUI"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Hai un account?"
 
@@ -1495,6 +1498,9 @@ msgstr "Inserisci una richiesta di accesso"
 
 msgid "Make a request &raquo;"
 msgstr "Invia una richiesta &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Invia una richiesta di accesso a queste amministrazioni"

@@ -1023,6 +1023,9 @@ msgstr "Od:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "PODROBNOSTI O VAŠI PRITOŽBI VPIŠITE TU"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr ""
 
@@ -1493,6 +1496,9 @@ msgstr "Naredite zahtevek"
 
 msgid "Make a request &raquo;"
 msgstr "Ustvarite zahtevek &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Ustvarite zahtevek na te organe"

@@ -1066,6 +1066,9 @@ msgstr "Nga:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "JEPI DETAJET PËR ANKESËN TËNDE KËTU"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Keni llogari"
 
@@ -1541,6 +1544,9 @@ msgstr "Bëj një kërkesë"
 
 msgid "Make a request &raquo;"
 msgstr "Bëj një kërkesë &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Bëj një kërkesë per keto institucione"
@@ -3416,6 +3422,9 @@ msgstr "Duke pritur që institucioni publik të përgjigjet"
 
 msgid "Want to know something?"
 msgstr "Dëshironi të dini diçka?"
+
+msgid "Want to know something?"
+msgstr ""
 
 msgid "Was the response you got to your FOI request any good?"
 msgstr "A ishte e pranueshme pergjigja ndaj kërkesa e suaj për te Drejten e Informimit?"

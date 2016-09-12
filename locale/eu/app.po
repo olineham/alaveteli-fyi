@@ -1046,6 +1046,9 @@ msgstr "Nondik:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "ZEHAZTU HEMEN ZURE KEXA"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr ""
 
@@ -1524,6 +1527,9 @@ msgid "Make a request"
 msgstr "Bidali eskabidea"
 
 msgid "Make a request &raquo;"
+msgstr ""
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
 msgstr ""
 
 msgid "Make a request to these authorities"

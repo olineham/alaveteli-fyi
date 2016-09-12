@@ -1,8 +1,7 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.22.2'
-
-gem 'pg', '~> 0.17.1'
+gem 'pg', '~> 0.18.4'
 
 # New gem releases aren't being done. master is newer and supports Rails > 3.0
 gem 'acts_as_versioned', :git => 'https://github.com/technoweenie/acts_as_versioned.git', :ref => '63b1fc8529d028'
@@ -10,7 +9,7 @@ gem 'active_model_otp', :git => 'https://github.com/mysociety/active_model_otp.g
 gem 'charlock_holmes', '~> 0.6.9.4'
 gem 'dynamic_form', '~> 1.1.4'
 gem 'exception_notification', '~> 3.0.1'
-gem 'fancybox-rails', '~> 0.2.1'
+gem 'fancybox-rails', '~> 0.3.1'
 gem 'foundation-rails', '~> 5.2.1.0'
 gem 'geoip', '~> 1.6.1'
 gem 'gnuplot', '2.6.2'
@@ -39,7 +38,7 @@ gem 'strip_attributes', :git => 'https://github.com/mysociety/strip_attributes.g
 gem 'syslog_protocol', '~> 0.9.2'
 gem 'thin', '~> 1.5.1'
 gem 'vpim', '~> 13.11.11'
-gem 'will_paginate', '~> 3.0.5'
+gem 'will_paginate', '~> 3.0.7' # 3.0.6 introduces Rails 4 support
 gem 'xapian-full-alaveteli', '~> 1.2.21.1'
 gem 'xml-simple', '~> 1.1.2', :require => 'xmlsimple'
 gem 'zip', '~> 2.0.2'
@@ -53,6 +52,12 @@ gem 'routing-filter', '~> 0.3.1'
 gem 'unicode', '~> 0.4.4'
 gem 'unidecoder', '~> 1.1.2'
 
+# Skylight monitoring
+gem 'skylight'
+
+# Raygun for exception reporting
+gem 'raygun4ruby'
+
 group :assets do
   gem 'bootstrap-sass', '~> 2.3.1.2'
   gem 'sass-rails', '~> 3.2.3'
@@ -64,6 +69,7 @@ end
 
 group :production do
   gem 'newrelic_rpm'
+  gem 'unicorn-rails', '~> 2.2.0'
 end
 
 group :test do
@@ -85,7 +91,7 @@ end
 
 group :development do
   gem 'capistrano', '~> 2.15.4'
-  gem 'mailcatcher', '~> 0.5.11'
+  gem 'mailcatcher', '~> 0.5.12'
   gem 'quiet_assets', '~> 1.0.2'
   gem 'rdoc', '~> 3.12.2'
 end

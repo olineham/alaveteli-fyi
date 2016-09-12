@@ -27,7 +27,7 @@ describe MailServerLog do
     let(:ir) { info_requests(:fancy_dog_request) }
 
     it "loads relevant lines of an uncompressed exim log file" do
-      expect(InfoRequest).to receive(:find_by_incoming_email).with("foi+request-1234@example.com").twice.and_return(ir)
+     expect(InfoRequest).to receive(:find_by_incoming_email).with("foi+request-1234@example.com").twice.and_return(ir)
       MailServerLog.load_file(text_log_path)
 
       expect(ir.mail_server_logs.count).to eq(2)

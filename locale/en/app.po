@@ -1014,6 +1014,9 @@ msgstr "From:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Got an account?"
 
@@ -1484,6 +1487,9 @@ msgstr "Make a request"
 
 msgid "Make a request &raquo;"
 msgstr "Make a request &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Make a request to these authorities"

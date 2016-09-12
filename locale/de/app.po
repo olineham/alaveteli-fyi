@@ -1064,6 +1064,9 @@ msgstr "Von:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "HINTELASSEN SIE HIER DETAILS ZU IHRER BESCHWERDE"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Haben Sie einen Account?"
 
@@ -1544,6 +1547,9 @@ msgstr "Anfrage stellen"
 
 msgid "Make a request &raquo;"
 msgstr "Stellen Sie eine Anfrage &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Stellen Sie eine Anfrage an diese Behörden"

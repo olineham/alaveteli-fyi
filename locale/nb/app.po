@@ -1030,6 +1030,9 @@ msgstr "Fra:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "SKRIV GRUNNENE FOR HVORFOR DU KLAGER HER"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Har du en konto?"
 
@@ -1500,6 +1503,9 @@ msgstr "Lag henvendelse"
 
 msgid "Make a request &raquo;"
 msgstr "Lag henvendelse &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Lag en henvendelse til disse myndighetene"

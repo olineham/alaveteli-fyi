@@ -1032,6 +1032,9 @@ msgstr "Frå:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "SKRIV GRUNNENE FOR KVIFOR DU KLAGAR HER"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr "Har du ein konto?"
 
@@ -1502,6 +1505,9 @@ msgstr "Lag førespurnad"
 
 msgid "Make a request &raquo;"
 msgstr "Lag en førespurnad &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Lag ein førespurnad til desse styresmaktene"

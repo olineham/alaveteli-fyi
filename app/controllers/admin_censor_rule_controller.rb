@@ -107,4 +107,12 @@ class AdminCensorRuleController < AdminController
       redirect_to admin_censor_rules_path
     end
   end
+
+  def censor_rule_params
+    if params[:censor_rule]
+      params[:censor_rule].slice(:regexp, :text, :replacement, :last_edit_comment, :last_edit_editor)
+    else
+      {}
+    end
+  end
 end

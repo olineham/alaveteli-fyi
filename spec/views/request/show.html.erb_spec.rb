@@ -24,7 +24,7 @@ describe 'request/show' do
     render
   end
 
-  describe 'when a status update has been requested' do
+ describe 'when a status update has been requested' do
 
     before do
       assign :update_status, true
@@ -34,8 +34,7 @@ describe 'request/show' do
       request_page
       expect(response).to have_css("div.describe_state_form#describe_state_form_1")
     end
-
-  end
+ end
 
   describe 'when it is awaiting a description' do
 
@@ -57,19 +56,19 @@ describe 'request/show' do
 
   describe 'when the user is the request owner' do
 
-    before do
+   before do
       assign :is_owning_user, true
     end
 
     describe 'when the request status is "waiting clarification"' do
 
-      before do
+     before do
         allow(mock_request).to receive(:calculate_status).and_return('waiting_clarification')
       end
 
       describe 'when there is a last response' do
 
-        let(:mock_response) { FactoryGirl.create(:incoming_message) }
+       let(:mock_response) { FactoryGirl.create(:incoming_message) }
 
         it 'should show a link to follow up the last response with clarification' do
           allow(mock_request).to receive(:get_last_public_response).
@@ -86,13 +85,13 @@ describe 'request/show' do
 
       end
 
-      describe 'when there is no last response' do
+     describe 'when there is no last response' do
 
         before do
           allow(mock_request).to receive(:get_last_public_response).and_return(nil)
         end
 
-        it 'should show a link to follow up the request without reference to a specific response' do
+       it 'should show a link to follow up the request without reference to a specific response' do
           request_page
           expected_url = new_request_followup_path(:request_id => mock_request.id)
           expect(response.body).

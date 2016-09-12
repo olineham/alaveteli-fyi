@@ -20,6 +20,10 @@ class ApplicationController < ActionController::Base
   # assign our own handler method for non-local exceptions
   rescue_from Exception, :with => :render_exception
 
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_not_found
+  rescue_from RouteNotFound, :with => :render_not_found
+  rescue_from WillPaginate::InvalidPage, :with => :render_not_found
+
   # Add some security-related headers (see config/initializers/secure_headers.rb)
   ensure_security_headers
 
@@ -150,20 +154,31 @@ class ApplicationController < ActionController::Base
     session[:ttl] = nil
   end
 
+  def render_not_found(exception)
+    Rails.logger.warn "#{request.url} not found raising #{exception.class}"
+    sanitize_path(params)
+
+    respond_to do |format|
+      format.html { render :template => "general/exception_caught", :status => 404 }
+      format.any { render :nothing => true, :status => 404 }
+    end
+  end
+
   def render_exception(exception)
     # In development or the admin interface let Rails handle the exception
     # with its stack trace templates
     if Rails.application.config.consider_all_requests_local || show_rails_exceptions?
-      raise exception
+      if defined?(Raygun)
+        Raygun.track_exception(exception)
+      else
+        raise exception
+      end
     end
 
     @exception_backtrace = exception.backtrace.join("\n")
     @exception_class = exception.class.to_s
     @exception_message = exception.message
     case exception
-    when ActiveRecord::RecordNotFound, RouteNotFound, WillPaginate::InvalidPage
-      @status = 404
-      sanitize_path(params)
     when PermissionDenied
       @status = 403
     else
@@ -171,14 +186,16 @@ class ApplicationController < ActionController::Base
       backtrace = Rails.backtrace_cleaner.clean(exception.backtrace, :silent)
       message << "  " << backtrace.join("\n  ")
       Rails.logger.fatal("#{message}\n\n")
+
       if !AlaveteliConfiguration.exception_notifications_from.blank? && !AlaveteliConfiguration.exception_notifications_to.blank?
         ExceptionNotifier::Notifier.exception_notification(request.env, exception).deliver
       end
       @status = 500
     end
+
     respond_to do |format|
-      format.html{ render :template => "general/exception_caught", :status => @status }
-      format.any{ render :nothing => true, :status => @status }
+      format.html { render :template => "general/exception_caught", :status => @status }
+      format.any { render :nothing => true, :status => @status }
     end
   end
 
@@ -192,7 +209,7 @@ class ApplicationController < ActionController::Base
   end
 
   def show_rails_exceptions?
-    false
+    ENV['SHOW_RAILS_EXCEPTIONS'] == 'true'
   end
 
   # Used to work out where to cache fragments. We add an extra path to the
@@ -344,9 +361,15 @@ class ApplicationController < ActionController::Base
   #
   def check_read_only
     if !AlaveteliConfiguration::read_only.empty?
-      flash[:notice] = _("<p>{{site_name}} is currently in maintenance. You can only view existing requests. You cannot make new ones, add followups or annotations, or otherwise change the database.</p> <p>{{read_only}}</p>",
-                         :site_name => site_name,
-                         :read_only => AlaveteliConfiguration::read_only)
+      if AlaveteliConfiguration::enable_annotations
+        flash[:notice] = _("<p>{{site_name}} is currently in maintenance. You can only view existing requests. You cannot make new ones, add followups or annotations, or otherwise change the database.</p> <p>{{read_only}}</p>",
+                           :site_name => site_name,
+                           :read_only => AlaveteliConfiguration::read_only)
+      else
+        flash[:notice] = _("<p>{{site_name}} is currently in maintenance. You can only view existing requests. You cannot make new ones, add followups or otherwise change the database.</p> <p>{{read_only}}</p>",
+                           :site_name => site_name,
+                           :read_only => AlaveteliConfiguration::read_only)
+      end
       redirect_to frontpage_url
     end
 

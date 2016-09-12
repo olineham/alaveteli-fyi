@@ -1034,6 +1034,9 @@ msgstr "Oddi wrth:"
 msgid "GIVE DETAILS ABOUT YOUR COMPLAINT HERE"
 msgstr "RHOWCH FANYLION AM EICH CWYN YMA"
 
+msgid "Get answers from the government and public sector"
+msgstr ""
+
 msgid "Got an account?"
 msgstr ""
 
@@ -1504,6 +1507,9 @@ msgstr "Gwneud cais"
 
 msgid "Make a request &raquo;"
 msgstr "Gwneud cais &raquo;"
+
+msgid "Make a request for information to a public authority: by law, they have to respond"
+msgstr ""
 
 msgid "Make a request to these authorities"
 msgstr "Gwneud cais i'r awdurdodau hyn"

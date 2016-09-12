@@ -1,19 +1,9 @@
-# -*- encoding : utf-8 -*-
-require File.dirname(__FILE__) + '/../commonlib/rblib/config'
-
-# Load intial mySociety config
-if ENV["RAILS_ENV"] == "test"
-  MySociety::Config.set_file(File.join(File.dirname(__FILE__), '..', 'config', 'test'), true)
-else
-  MySociety::Config.set_file(File.join(File.dirname(__FILE__), '..', 'config', 'general'), true)
-end
-MySociety::Config.load_default
-
 # Configuration values with defaults
-
 # TODO: Make this return different values depending on the current rails environment
 
 module AlaveteliConfiguration
+  mattr_accessor :config
+
   if !const_defined?(:DEFAULTS)
 
     DEFAULTS = {
@@ -34,6 +24,7 @@ module AlaveteliConfiguration
       :DISABLE_EMERGENCY_USER => false,
       :DOMAIN => 'localhost:3000',
       :DONATION_URL => '',
+      :ENABLE_ANNOTATIONS => true,
       :ENABLE_TWO_FACTOR_AUTH => false,
       :ENABLE_WIDGETS => false,
       :EXCEPTION_NOTIFICATIONS_FROM => 'errors@localhost',
@@ -50,9 +41,6 @@ module AlaveteliConfiguration
       :INCOMING_EMAIL_DOMAIN => 'localhost',
       :INCOMING_EMAIL_PREFIX => 'foi+',
       :INCOMING_EMAIL_SECRET => 'dummysecret',
-      :INCOMING_EMAIL_SPAM_ACTION => false,
-      :INCOMING_EMAIL_SPAM_HEADER => 'X-Spam-Score',
-      :INCOMING_EMAIL_SPAM_THRESHOLD => false,
       :ISO_COUNTRY_CODE => 'GB',
       :MINIMUM_REQUESTS_FOR_STATISTICS => 100,
       :MAX_REQUESTS_PER_USER_PER_DAY => 6,
@@ -86,26 +74,25 @@ module AlaveteliConfiguration
       :TIME_ZONE => "UTC",
       :TRACK_SENDER_EMAIL => 'contact@localhost',
       :TRACK_SENDER_NAME => 'Alaveteli',
-      :FACEBOOK_USERNAME => '',
       :TWITTER_USERNAME => '',
       :TWITTER_WIDGET_ID => false,
       :USE_DEFAULT_BROWSER_LANGUAGE => true,
       :USE_GHOSTSCRIPT_COMPRESSION => false,
       :USE_MAILCATCHER_IN_DEVELOPMENT => true,
+      :USE_RECAPTCHA_FOR_REGISTRATION => false,
       :UTILITY_SEARCH_PATH => ["/usr/bin", "/usr/local/bin"],
       :VARNISH_HOST => '',
       :WORKING_OR_CALENDAR_DAYS => 'working',
       :USE_BULLET_IN_DEVELOPMENT => false,
+      :INCOMING_EMAIL_SPAM_ACTION => false,
       :EXTERNAL_REVIEWERS => ''
     }
   end
 
   def self.method_missing(name)
+    self.config ||= YAML.load(ERB.new(File.read(Rails.root.join 'config', 'general.yml')).result)
     key = name.to_s.upcase
-    if DEFAULTS.has_key?(key.to_sym)
-      MySociety::Config.get(key, DEFAULTS[key.to_sym])
-    else
-      super
-    end
+    return super unless self.config.has_key?(key) or DEFAULTS.has_key?(key.to_sym)
+    config.fetch(key, DEFAULTS[key.to_sym])
   end
 end
